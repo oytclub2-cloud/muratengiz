@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murat Engiz | Ultra Mega Seramik & Yüzey Dönüşüm Laboratuvarı</title>
+    <style>
+        /* Liquid Chrome & Deep Cyber Luxury Temelleri */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: #080a10; color: #f1f5f9; line-height: 1.6; overflow-x: hidden; }
+
+        :root {
+            --chrome-silver: #e2e8f0;
+            --deep-blue: #0f172a;
+            --liquid-glow: #38bdf8;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Sabit Parlak Header */
+        header { 
+            background-color: rgba(8, 10, 16, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 25px 40px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            position: sticky; top: 0; z-index: 100;
+        }
+        header h1 { font-size: 22px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; color: #fff; }
+        header h1 span { color: var(--liquid-glow); text-shadow: 0 0 15px rgba(56, 189, 248, 0.6); }
+        header p { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Sinematik Likit Hero Alanı */
+        .hero { 
+            padding: 160px 20px; 
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);
+            width: 300px; height: 300px; background: rgba(56, 189, 248, 0.15);
+            filter: blur(100px); border-radius: 50%; z-index: -1;
+        }
+        .hero h2 { font-size: 46px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; color: #fff; line-height: 1.1; }
+        .hero h2 span { background: linear-gradient(to right, #fff, var(--liquid-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 17px; margin: 30px 0 40px 0; color: #94a3b8; font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        /* Ultra Mega Likit Buton */
+        .btn-call { 
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            color: #fff; 
+            padding: 18px 50px; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 700; 
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 50px;
+            display: inline-block;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+        }
+        .btn-call:hover { 
+            border-color: var(--liquid-glow);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+            transform: scale(1.03);
+            color: #080a10;
+            background: #fff;
+        }
+
+        .container { max-width: 1000px; margin: 80px auto; padding: 0 20px; }
+        .section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: #64748b; margin-bottom: 50px; text-align: center; }
+
+        /* Akışkan ve Geniş Kart Yapısı */
+        .mega-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .mega-card { 
+            background: linear-gradient(90deg, var(--deep-blue), rgba(15, 23, 42, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .mega-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: transparent; transition: var(--transition);
+        }
+        .mega-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: linear-gradient(90deg, #0f172a, rgba(56, 189, 248, 0.05));
+        }
+        .mega-card:hover::before {
+            background: var(--liquid-glow);
+            box-shadow: 0 0 15px var(--liquid-glow);
+        }
+        
+        .card-left h3 { font-size: 24px; color: #fff; font-weight: 700; transition: var(--transition); }
+        .mega-card:hover .card-left h3 { color: var(--liquid-glow); }
+        .card-left p { color: #94a3b8; font-size: 15px; margin-top: 8px; font-weight: 300; }
+        
+        .card-tag {
+            font-size: 11px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--liquid-glow);
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* İnteraktif Cam Panel (Modal) */
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(4, 6, 10, 0.8); z-index: 1000;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: var(--transition);
+            backdrop-filter: blur(12px);
+        }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            background: #0f172a; padding: 50px; max-width: 600px; width: 90%;
+            border-radius: 24px; position: relative; transform: scale(0.9); transition: var(--transition);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+        }
+        .modal.active .modal-content { transform: scale(1); }
+        .close-modal { position: absolute; top: 20px; right: 25px; font-size: 28px; cursor: pointer; color: #64748b; transition: color 0.2s; }
+        .close-modal:hover { color: var(--liquid-glow); }
+        .modal-title { font-size: 26px; margin-bottom: 20px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        .modal-text { color: #94a3b8; font-size: 16px; line-height: 1.8; font-weight: 300; }
+
+        /* Fütüristik İletişim Alanı */
+        .contact-box { 
+            text-align: center; 
+            background: linear-gradient(180deg, var(--deep-blue), transparent);
+            padding: 80px 20px; 
+            margin-top: 100px; 
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .contact-box h3 { font-size: 22px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
+        .contact-number { color: var(--liquid-glow); font-size: 42px; font-weight: 900; text-decoration: none; display: inline-block; margin: 20px 0; letter-spacing: -1px; transition: var(--transition); }
+        .contact-number:hover { transform: scale(1.02); text-shadow: 0 0 30px rgba(56, 189, 248, 0.6); }
+
+        /* Sağ Alttaki Hipnotik Müzik Kontrol Paneli */
+        .music-panel {
+            position: fixed; bottom: 30px; right: 30px;
+            background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 12px 24px; border-radius: 100px;
+            color: #fff; font-size: 13px; font-weight: 600;
+            cursor: pointer; z-index: 999; display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: var(--transition);
+        }
+        .music-panel:hover { transform: translateY(-3px); border-color: var(--liquid-glow); box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2); }
+        .pulse-dot { width: 8px; height: 8px; background-color: var(--liquid-glow); border-radius: 50%; display: inline-block; }
+        .pulse-active { animation: pulse 1.5s infinite; }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+            70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+        }
+
+        footer { text-align: center; padding: 40px; color: #475569; font-size: 12px; letter-spacing: 1px; margin-top: 80px; }
+    </style>
+</head>
+<body>
+
+    <!-- Boyama Odaklanma Ritmine Uygun Akışkan Chill Deep House Müziği -->
+    <audio id="transformationMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Hipnotik Müzik Butonu -->
+    <div class="music-panel" id="musicBtn" onclick="toggleMusic()">
+        <span class="pulse-dot" id="musicDot"></span>
+        <span id="musicText">Odaklanma Ritmini Aç</span>
+    </div>
+
+    <header>
+        <h1>MURAT <span>ENGİZ</span></h1>
+        <p>Ultra Mega Seramik & Yüzey Teknolojileri</p>
+    </header>
+
+    <section class="hero">
+        <h2>Eski Seramikleri <span>Likit Krom Pürüzsüzlüğüyle</span> Yeniden Kodlayın.</h2>
+        <p>Banyonuzu ve mutfağınızı şantiyeye çevirmeden, kırma gürültüsü olmadan, su ve kimyasallara tam dirençli moleküler epoksi kaplama sanatı.</p>
+        <a href="tel:05425967418" class="btn-call">İletişim Hattı &rarr;</a>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">// Dönüşüm Katmanları</h2>
+        
+        <div class="mega-grid">
+            <!-- Mega Katman 1 -->
+            <div class="mega-card" onclick="openModal('Ultra Mega Seramik Boyama', 'Kırma ve dökme işini tamamen unutun usta. Kullandığımız özel formüllü sıvı epoksi seramik boyaları, fayansın yüzeyine moleküler düzeyde yapışır. Su sızdırmaz, nem yapmaz, en ağır banyo kimyasallarına karşı taş gibi direnç gösterir. Boya bittiğinde ortaya çıkan o pürüzsüz, monoblok cam yüzey hissi banyonuzu milyarlık ultra lüks bir suit odaya dönüştürür.')">
+                <div class="card-left">
+                    <h3>01 / Saf Seramik & Fayans Epoksisi</h3>
+                    <p>Kırma dökme maliyetine girmeden, yüksek parlaklıkta monoblok yüzey jiletliği.</p>
+                </div>
+                <div class="card-tag">Ana Odak</div>
+            </div>
+
+            <!-- Mega Katman 2 -->
+            <div class="mega-card" onclick="openModal('Mutfak Komponent Revizyonu', 'Mutfak dolaplarınızı yüksek basınçlı püskürtme sistemlerimizle moleküler düzeyde kaplıyoruz. Çizilmelere, buhara ve mutfak yağlarına karşı ultra dirençli, kusursuz mat veya jilet gibi parlak lake yüzey dönüşümleri gerçekleştiriyoruz.')">
+                <div class="card-left">
+                    <h3>02 / Likit Mutfak Dönüşümü</h3>
+                    <p>Mevcut dolap ünitelerinde sıfır hata payıyla fabrikasyon lake standardı.</p>
+                </div>
+                <div class="card-tag">Yüzey</div>
+            </div>
+
+            <!-- Mega Katman 3 -->
+            <div class="mega-card" onclick="openModal('Makro İç Cephe Mühendisliği', 'Duvarların doğrusal geometrisini düzeltiyor, ışık vurunca en ufak dalgalanma göstermeyen hatlar inşa ediyoruz. Kesim çizgileri cetvelle çizilmiş gibi keskin, renk dağılımı ise tamamen homojendir.')">
+                <div class="card-left">
+                    <h3>03 / Kusursuz İç Cephe Anatomisi</h3>
+                    <p>Gölge oyunlarına izin vermeyen, pürüzsüz son kat boya mimarisi.</p>
+                </div>
+                <div class="card-tag">Geometri</div>
+            </div>
+
+            <!-- Mega Katman 4 -->
+            <div class="mega-card" onclick="openModal('Saten Alçı Entegrasyonu', 'Boyanın kalitesini yüzeyin dürüstlüğü belirler. Duvarlardaki derin çatlakları, eğrilikleri ve tüm deformasyonları saten alçı işçiliğimizle sıfırlayarak ayna düzlüğünde zeminler hazırlıyoruz.')">
+                <div class="card-left">
+                    <h3>04 / Mikron Saten Alçı Altyapısı</h3>
+                    <p>Optik pürüzsüzlüğü yakalamak için geliştirilmiş pürüzsüz zemin formülü.</p>
+                </div>
+                <div class="card-tag">Altyapı</div>
+            </div>
+        </div>
+
+        <!-- İletişim Alanı -->
+        <div class="contact-box">
+            <h3>// Randevu İcin İletişim</h3>
+            <p>Mekan analizi, ölçümlendirme ve bütçe planlama süreçleri için hat 7/24 aktif:</p>
+            <a href="tel:05425967418" class="contact-number">0542 596 74 18</a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-title" id="modalTitle">BAŞLIK</div>
+            <div class="modal-text" id="modalText">İÇERİK</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Murat Engiz. İstanbul İleri Düzey Yüzey Modifikasyonları.</p>
+    </footer>
+
+    <script>
+        function openModal(title, text) {
+            document.getElementById('modalTitle').innerHTML = title;
+            document.getElementById('modalText').innerHTML = text;
+            document.getElementById('infoModal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('infoModal').classList.remove('active');
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById('infoModal');
+            if (event.target == modal) { modal.classList.remove('active'); }
+        }
+
+        // Akışkan Boyama Ritmi Müzik Kontrolü
+        function toggleMusic() {
+            var music = document.getElementById("transformationMusic");
+            var btnText = document.getElementById("musicText");
+            var btnDot = document.getElementById("musicDot");
+            
+            if (music.paused) {
+                music.play();
+                btnText.innerHTML = "Ritim Akıyor...";
+                btnDot.classList.add("pulse-active");
+            } else {
+                music.pause();
+                btnText.innerHTML = "Odaklanma Ritmini Aç";
+                btnDot.classList.remove("pulse-active");
+            }
+        }
+    </script>
+
+</body>
+</html>
